@@ -1,11 +1,11 @@
-import _ from 'lodash';
+function sayHiTo(name) {
+    //some ES6 features, just to check Babel
+    let [a, b, c, d] = [1, 2, 3, 4];
+    
+    console.log(a, b, c, d);
+    console.log(name.includes('x'));
 
-function component() {
-    var element = document.createElement('div');
-
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-    return element;
+    return "Hello, " + name;
 }
 
-document.body.appendChild(component());
+document.body.innerHTML = sayHiTo("Alexey"); 

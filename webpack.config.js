@@ -1,27 +1,22 @@
 const path = require('path');
 
-module.exports = env => {
-    console.log('NODE_ENV: ', env.NODE_ENV) // 'local'
-    console.log('Production: ', env.production) // true
-    
-    return {
-        entry: './src/index.ts',
-        devtool: 'inline-source-map',
-        module: {
-            rules: [
-                {
-                    test: /\.tsx?$/,
-                    use: 'ts-loader',
-                    exclude: /node_modules/
-                }
-            ]
-        },
-        resolve: {
-            extensions: [".tsx", ".ts", ".js"]
-        },
-        output: {
-            filename: 'bundle.js',
-            path: path.resolve(__dirname, 'dist')
-        }
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                include: path.resolve(__dirname, "src"),
+                loader: "babel-loader"
+            }
+        ]
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
     }
 };

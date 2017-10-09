@@ -36,6 +36,8 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
     "css-loader": "^0.28.7",
     "exports-loader": "^0.6.4",

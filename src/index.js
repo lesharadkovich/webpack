@@ -1,5 +1,9 @@
 import { cube } from './math.js';
 
+if(process.env.NODE_END !== 'production') {
+    console.log('looks like we are in development mode!')
+}
+
 function component() {
     var element = document.createElement('pre');
 
@@ -11,4 +15,4 @@ function component() {
     return element;
 }
 
-document.body.appendChild(element);
+document.body.appendChild(component());
